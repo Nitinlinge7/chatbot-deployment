@@ -1,0 +1,252 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+#chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+#chatbot-icon:hover {
+    transform: scale(1.1);
+}
+
+#chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 999;
+}
+
+#chatbot-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#chatbot-header {
+    background-color: #32cd32;
+    color: #fff;
+}
+
+#chatbot-messages {
+    height: 350px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 80%;
+    position: relative;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+.user {
+    background-color: #aafdaa;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot {
+    background-color: #aafdaa;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.dropdown-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-message {
+    margin-bottom: 5px;
+}
+
+button.options-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.options-list {
+    background-color: #fffacd;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
+    display: none;
+    flex-direction: column;
+}
+
+.options-list div {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.options-list div:hover {
+    background-color: #f1f1f1;
+}
+
+#voice-input-button {
+    border: none;
+}
+
+#mic-icon {
+    color: #5e5e5e;
+}
+
+#voice-input-button.active #mic-icon {
+    color: #85c226;
+}
+
+.settings-menu {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    background: rgb(146, 146, 146);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.settings-menu button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    text-align: left;
+}
+
+.settings-menu button:hover {
+    background: #d3d0d0;
+}
+
+.typing {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ccc;
+    animation: typing 2s infinite;
+    margin-left: 2px;
+}
+
+.typing:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+}
+
+#typing-window {
+    display: flex;
+    align-items: center;
+}
+
+/* New styles for input box and buttons */
+#user-input {
+    background-color: #f0f8ff; /* Same as body background color */
+    color: #333; /* Text color inside the input box */
+    border: 1px solid #ccc; /* Border color to match the design */
+    border-radius: 5px; /* Border radius for rounded corners */
+}
+
+.button-response {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-response button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.button-response button:hover {
+    background-color: #0056b3;
+}
+
+/* Add to existing CSS file */
+
+#chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 999;
+}
+
+#chatbot-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.message img, .message video, .message iframe {
+    max-width: 70%; /* Set maximum width to 55% */
+    display: block;
+    margin: 0 auto;
+}
